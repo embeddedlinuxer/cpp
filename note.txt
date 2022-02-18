@@ -1,0 +1,35 @@
+1) STL: a set of template classes. a library of container classes, algorithms, and iterators.
+1.1. algorithms
+- sorting
+- searching
+- stl algorithm
+- array algorithm
+- partition operations
+
+1.2 containers
+- vector : LIFO. use contiguous storage locations. size changes dynamically by the container
+push_back(), pop_back()
+
+- stack : LIFO. insert and extract from only one end of container.
+push(), pop(), top();
+
+- queue : FIFO. insert one end. extract the other end.
+push_back(), pop_front();
+ 
+- deque : similar to vector. but deque elements are scattered in the storage.
+push_back(), push_front(), pop_back(), pop_front();
+
+- list : heap and binary trees
+- forward_list : stack 
+- arrays
+- forward_list
+
+1.3 functions
+-
+
+1.4 iterators
+-
+
+
+
+2. data types
