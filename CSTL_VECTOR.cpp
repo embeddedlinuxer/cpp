@@ -20,6 +20,7 @@ void
 CSTL_VECTOR::
 stlVector()
 {
+	cout << "charVector.max_size(): " << charVector.max_size() << endl;
 	char sample[] = {'c','h','i','c','a','g','o'};
 	for (auto i=charVector.begin(); i != charVector.end(); i++)
 	cout << "charVector with begin: " << *i << endl;
@@ -47,7 +48,6 @@ stlVector()
 	cout << "charVector after assign chicago: " << charVector.data() 
 		 << " size: " << charVector.size() 
 		 << " capacity: " << charVector.capacity() 
-		 << " at 4: " << charVector.at(2) 
 		 << endl;
 
 	charVector.pop_back();
@@ -55,15 +55,17 @@ stlVector()
 	cout << "charVector after pop_back: " << charVector.data() 
 		 << " size: " << charVector.size() 
 		 << " capacity: " << charVector.capacity() 
-		 << " at 4: " << charVector.at(2) 
+		 << " at(2): " << charVector.at(2) 
 		 << endl;
 
+	charVector.push_back('x');
+	charVector.push_back('x');
+	charVector.push_back('x');
 	charVector.push_back('x');
 	charVector.shrink_to_fit();
 	cout << "charVector after push_back: " << charVector.data() 
 		 << " size: " << charVector.size() 
 		 << " capacity: " << charVector.capacity() 
-		 << " at 4: " << charVector.at(2) 
 		 << endl;
 
 	charVector.insert(charVector.begin()+3,'Q');
@@ -71,37 +73,80 @@ stlVector()
 	cout << "charVector after insert: " << charVector.data() 
 		 << " size: " << charVector.size() 
 		 << " capacity: " << charVector.capacity() 
-		 << " at 4: " << charVector.at(2) 
 		 << endl;
 
-	cout << "charVector: " << charVector.data() << endl
-	 	 << "charVector2: " << charVector2.data() << endl;
+	cout << "charVector: " << charVector.data() << endl;
+	cout << "charVector2: " << charVector2.data() << endl;
+
 	charVector.swap(charVector2);
 	charVector.shrink_to_fit();
-	cout << "charVector after swap: " << charVector.data() << endl
-		 << "charVector2 after swap: " << charVector2.data() << endl
-		 << "charVector.at 0: " << charVector.at(0) << endl
-		 << "charVector.at 1: " << charVector.at(1) << endl
-		 << "charVector.at 2: " << charVector.at(2) 
-		 << "charVector.max_size(): " << charVector.max_size()
-		 << endl;
-	charVector.resize(20);
+	cout << "charVector after swap: " << charVector.data() << endl;
+	cout << "charVector2 after swap: " << charVector2.data() << endl;
+
+	charVector.resize(30);
+	cout << "capacity after resize(30): " << charVector.capacity() << endl; 
+	cout << "size after resize(30): " << charVector.size() << endl; 
+	charVector.reserve(30);
+	cout << "capacity after reserve(30): " << charVector.capacity() << endl; 
+	cout << "size after reserve(30): " << charVector.size() << endl; 
+	cout << "charVector after resize: " << charVector.data() << endl;
+	charVector2.swap(charVector);
+
+	charVector.emplace(charVector.begin()+1,'i'); 
+	charVector.emplace(charVector.begin()+2,'i'); 
+	charVector.emplace(charVector.begin()+5,'i'); 
+	 
+	charVector.insert(charVector.begin()+10,'n'); 
+
+	charVector.push_back('I'); 
+	charVector.push_back('l'); 
+	charVector.push_back('l'); 
+	charVector.push_back('i'); 
+	charVector.push_back('n'); 
+	charVector.push_back('o'); 
+	charVector.push_back('i'); 
+	charVector.push_back('s'); 
+
+	charVector.emplace_back('k'); 
+	charVector.emplace_back('j');
+
+	charVector.resize(10);
 	charVector.shrink_to_fit();
-	cout << "charVector after swap: " << charVector.data() << endl
-		 << "charVector2 after swap: " << charVector2.data() << endl
-		 << "charVector.at 0: " << charVector.at(0) << endl
-		 << "charVector.at 1: " << charVector.at(1) << endl
-		 << "charVector.at 2: " << charVector.at(2) 
-		 << endl;
-		 charVector.push_back('i'); 
-		 charVector.push_back('l'); 
-		 charVector.push_back('l'); 
-		 charVector.push_back('i'); 
-		 charVector.push_back('n'); 
-		 charVector.push_back('o'); 
-		 charVector.push_back('i'); 
-		 charVector.push_back('s'); 
-		charVector.shrink_to_fit();
-	cout << "charVector after push_back: " << charVector.data()
-		 << endl;
+
+	cout << "capacity after resize(10): " << charVector.capacity() << endl; 
+	cout << "size after resize(10): " << charVector.size() << endl; 
+	cout << "data after resize(10): " << charVector.data() << endl;
+
+	if (charVector.empty()) cout << "empty" << endl;
+	else cout << "not empty" << endl;
+
+	charVector.erase(charVector.begin()+2, charVector.begin()+4);
+	charVector.shrink_to_fit();
+	
+	cout << "capacity after erase: " << charVector.capacity() << endl; 
+	cout << "size after erase: " << charVector.size() << endl;
+	cout << "data after erase: " << charVector.data() << endl;
+
+	charVector.clear();
+
+	charVector.push_back('I'); 
+	charVector.push_back('l'); 
+	charVector.push_back('l'); 
+	charVector.push_back('i'); 
+	charVector.push_back('n'); 
+	charVector.push_back('o'); 
+	charVector.push_back('i'); 
+	charVector.push_back('s'); 
+
+	charVector.resize(30);
+
+	charVector.insert(charVector.end(), 'C');
+	charVector.insert(charVector.end(), 'h');
+	//charVector.shrink_to_fit();
+
+	cout << "capacity after resize: " << charVector.capacity() << endl; 
+	cout << "size after resize: " << charVector.size() << endl;
+	cout << "data after resize: " << charVector.data() << endl;
+
+
 }

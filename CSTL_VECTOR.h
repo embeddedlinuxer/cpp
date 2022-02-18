@@ -27,9 +27,9 @@ public:
 	//void stlVector_insert();
 	//void stlVector_max_size();
 	//void stlVector_resize();
-	void stlVector_emplace();
-	void stlVector_emplace_back();
-	void stlVector_empty();
+	//void stlVector_emplace();
+	//void stlVector_emplace_back();
+	//void stlVector_empty();
 	void stlVector_erase();
 	void stlVector_get_allocator();
 	void stlVector_reserve();
