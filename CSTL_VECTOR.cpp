@@ -128,6 +128,7 @@ stlVector()
 	cout << "data after erase: " << charVector.data() << endl;
 
 	charVector.clear();
+	cout << "cleared!!" << endl;
 
 	charVector.push_back('I'); 
 	charVector.push_back('l'); 
@@ -138,15 +139,82 @@ stlVector()
 	charVector.push_back('i'); 
 	charVector.push_back('s'); 
 
-	charVector.resize(30);
+	charVector.emplace_back('j');
+	charVector.resize(4);
+	charVector.shrink_to_fit();
 
-	charVector.insert(charVector.end(), 'C');
-	charVector.insert(charVector.end(), 'h');
-	//charVector.shrink_to_fit();
+	charVector.push_back('C'); 
+	charVector.push_back('h'); 
+	charVector.push_back('i'); 
+	charVector.push_back('c'); 
+	charVector.push_back('a'); 
+	charVector.push_back('g'); 
+	charVector.push_back('o'); 
+	charVector.push_back(','); 
 
 	cout << "capacity after resize: " << charVector.capacity() << endl; 
 	cout << "size after resize: " << charVector.size() << endl;
 	cout << "data after resize: " << charVector.data() << endl;
+
+	charVector.pop_back();
+	charVector.shrink_to_fit();
+	cout << "size after pop_back(): " << charVector.size() << endl;
+	cout << "data after pop_back(): " << charVector.data() << endl;
+
+	charVector.pop_back(); 
+	charVector.shrink_to_fit();
+	cout << "size after pop_back(): " << charVector.size() << endl;
+	cout << "data after pop_back(): " << charVector.data() << endl;
+
+	charVector.swap(charVector2);
+	charVector.shrink_to_fit();
+	charVector2.shrink_to_fit();
+	cout << "data after swap(charVector2): " << charVector.data() << endl;
+	cout << "size after swap: " << charVector.size() << endl;
+	cout << "capacity after swap: " << charVector.capacity() << endl; 
+
+	charVector2.swap(charVector);
+	charVector.shrink_to_fit();
+	charVector2.shrink_to_fit();
+	cout << "charVector2.swap(charVector): " << charVector.data() << endl;
+	cout << "charVector.data(): " << charVector.data() << endl;
+	cout << "charVector.size(): " << charVector.size() << endl;
+	cout << "charVector.capacity: " << charVector.capacity() << endl; 
+	cout << "charVector2.data(): " << charVector2.data() << endl;
+	cout << "charVector2.size(): " << charVector2.size() << endl;
+	cout << "charVector2.capacity: " << charVector2.capacity() << endl; 
+
+	charVector.pop_back();
+	charVector.shrink_to_fit();
+	cout << "size after pop_back(): " << charVector.size() << endl;
+	cout << "data : " << charVector.data() << endl;
+
+	charVector.pop_back();
+	charVector.shrink_to_fit();
+	cout << "size after pop_back(): " << charVector.size() << endl;
+	cout << "data: " << charVector.data() << endl;
+
+	charVector.pop_back();
+	charVector.shrink_to_fit();
+	cout << "size after pop_back() again: " << charVector.size() << endl;
+	cout << "data: " << charVector.data() << endl;
+
+	charVector.pop_back();
+	charVector.shrink_to_fit();
+	cout << "size after pop_back() again: " << charVector.size() << endl;
+	cout << "data: " << charVector.data() << endl;
+
+	charVector.erase(charVector.cbegin()+3);
+	cout << "size after erase(): " << charVector.size() << endl;
+	cout << "capacity: " << charVector.capacity() << endl; 
+	cout << "data: " << charVector.data() << endl;
+
+
+
+
+
+
+
 
 
 }

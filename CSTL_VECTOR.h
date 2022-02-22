@@ -13,26 +13,8 @@ public:
 	CSTL_VECTOR();
 	~CSTL_VECTOR();
 	void stlVector();
-	//void stlVector_at();
-	//void stlVector_back();
-	//void stlVector_capacity();
-	//void stlVector_clear();
-	//void stlVector_data();
-	//void stlVector_size();
-	//void stlVector_front();
-	//void stlVector_swap();
-	//void stlVector_pop_back();
-	//void stlVector_push_back();
-	//void stlVector_shrink_to_fit();
-	//void stlVector_insert();
-	//void stlVector_max_size();
-	//void stlVector_resize();
-	//void stlVector_emplace();
-	//void stlVector_emplace_back();
-	//void stlVector_empty();
-	void stlVector_erase();
-	void stlVector_get_allocator();
-	void stlVector_reserve();
+	//void stlVector_get_allocator();
+	//void stlVector_reserve();
 
 protected:
 
