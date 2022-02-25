@@ -189,32 +189,10 @@ stlVector()
 	cout << "size after pop_back(): " << charVector.size() << endl;
 	cout << "data : " << charVector.data() << endl;
 
-	charVector.pop_back();
+	charVector.erase(charVector.cbegin()+3,charVector.cend() );
+	charVector.resize(3);
 	charVector.shrink_to_fit();
-	cout << "size after pop_back(): " << charVector.size() << endl;
-	cout << "data: " << charVector.data() << endl;
-
-	charVector.pop_back();
-	charVector.shrink_to_fit();
-	cout << "size after pop_back() again: " << charVector.size() << endl;
-	cout << "data: " << charVector.data() << endl;
-
-	charVector.pop_back();
-	charVector.shrink_to_fit();
-	cout << "size after pop_back() again: " << charVector.size() << endl;
-	cout << "data: " << charVector.data() << endl;
-
-	charVector.erase(charVector.cbegin()+3);
 	cout << "size after erase(): " << charVector.size() << endl;
 	cout << "capacity: " << charVector.capacity() << endl; 
 	cout << "data: " << charVector.data() << endl;
-
-
-
-
-
-
-
-
-
 }
